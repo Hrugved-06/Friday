@@ -446,7 +446,6 @@ class TestAlerts:
         assert resp.status_code == 200
         assert "alerts" in data
 
-class TestAlerts:
     async def test_alerts_returns_list(self, app, headers, monkeypatch):
         import desktop.api_server as api
 
@@ -491,7 +490,7 @@ class TestAlerts:
         assert resp.status_code == 200
         assert data["alerts"] == []
         assert data["count"] == 0
-        
+
 class TestVision:
     async def test_vision_analyze_no_image(self, app, headers):
         async with app.test_client() as client:
